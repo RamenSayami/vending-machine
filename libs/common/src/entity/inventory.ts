@@ -18,5 +18,8 @@ export class Inventory {
     @Column({nullable: false})
     currentStock: number;
 
+    @Column({nullable: false})
+    isDeleted: boolean;
+
 }
 

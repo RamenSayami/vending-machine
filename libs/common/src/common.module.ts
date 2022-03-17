@@ -5,6 +5,7 @@ import { CommonService } from './common.service';
 import { Inventory } from './entity/inventory';
 import { Logs } from './entity/logs';
 import { Settings } from './entity/settings';
+import { GenericResponseUtil } from './utils/generic-response.util';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { Settings } from './entity/settings';
       entities: [Settings, Inventory, Logs],
       synchronize: true,
     }),
+    TypeOrmModule.forFeature([Inventory]),
   ],
   providers: [CommonService],
   exports: [CommonService],
