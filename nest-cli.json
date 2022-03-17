@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/vending-machine/src",
+  "monorepo": true,
+  "root": "apps/vending-machine",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/vending-machine/tsconfig.app.json"
+  },
+  "projects": {
+    "vending-machine": {
+      "type": "application",
+      "root": "apps/vending-machine",
+      "entryFile": "main",
+      "sourceRoot": "apps/vending-machine/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/vending-machine/tsconfig.app.json"
+      }
+    },
+    "customer": {
+      "type": "application",
+      "root": "apps/customer",
+      "entryFile": "main",
+      "sourceRoot": "apps/customer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/customer/tsconfig.app.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    }
+  }
+}
