@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Inventory } from './entity/inventory';
+import { Inventory } from './entities/inventory';
 import { GenericResponseUtil } from './utils/generic-response.util';
 
 @Injectable()

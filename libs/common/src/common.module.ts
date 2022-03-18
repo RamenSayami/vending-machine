@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommonService } from './common.service';
-import { Inventory } from './entity/inventory';
-import { Logs } from './entity/logs';
-import { Settings } from './entity/settings';
+import { Inventory } from './entities/inventory';
+import { Logs } from './entities/logs';
+import { Settings } from './entities/settings';
 import { GenericResponseUtil } from './utils/generic-response.util';
 
 @Module({
@@ -20,7 +20,7 @@ import { GenericResponseUtil } from './utils/generic-response.util';
       entities: [Settings, Inventory, Logs],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Inventory]),
+    TypeOrmModule.forFeature([Inventory, Settings, Logs]),
   ],
   providers: [CommonService],
   exports: [CommonService],

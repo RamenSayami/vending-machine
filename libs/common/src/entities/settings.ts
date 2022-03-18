@@ -13,6 +13,8 @@ export class Settings {
     value: string;
     
     @Column({nullable: false})
-    editable: boolean;
-    
+    isEditable: boolean;
+
+    @Column()
+    numberValue: number;
 }

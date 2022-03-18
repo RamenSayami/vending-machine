@@ -1,5 +1,5 @@
 import { CommonService } from '@app/common';
-import { Inventory } from '@app/common/entity/inventory';
+import { Inventory } from '@app/common/entities/inventory';
 import { GenericResponseUtil } from '@app/common/utils/generic-response.util';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';

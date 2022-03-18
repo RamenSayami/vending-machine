@@ -3,7 +3,7 @@ import { InventoryService } from './inventory.service';
 import { InventoryController } from './inventory.controller';
 import { CommonService } from '@app/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Inventory } from '@app/common/entity/inventory';
+import { Inventory } from '@app/common/entities/inventory';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Inventory])],
