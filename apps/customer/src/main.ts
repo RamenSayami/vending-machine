@@ -14,7 +14,8 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-
-  await app.listen(8200);
+  const port = 8200;
+  console.log('Customer backend port ' , 'http://localhost:'+port+'/api/')
+  await app.listen(port);
 }
 bootstrap();

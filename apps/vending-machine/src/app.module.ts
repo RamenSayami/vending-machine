@@ -1,4 +1,5 @@
 import { CommonModule } from '@app/common';
+import { Inventory } from '@app/common/entities/inventory';
 import { Settings } from '@app/common/entities/settings';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -11,7 +12,7 @@ import { SettingModule } from './setting/setting.module';
   imports: [
     CommonModule,
     InventoryModule,
-    TypeOrmModule.forFeature([Settings]),
+    TypeOrmModule.forFeature([Settings, Inventory]),
     SettingModule],
   controllers: [AppController],
   providers: [AppService],

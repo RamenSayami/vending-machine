@@ -27,10 +27,10 @@ export class InventoryController {
     return this.inventoryService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateInventoryDto: UpdateInventoryDto) {
-    return this.inventoryService.update(+id, updateInventoryDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateInventoryDto: UpdateInventoryDto) {
+  //   return this.inventoryService.update(+id, updateInventoryDto);
+  // }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
