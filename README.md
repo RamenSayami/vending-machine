@@ -22,9 +22,9 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Vending Machine
+## Vending Machine Backends
 
-Vending Machine Backend - is made using the Nest Framework. 
+Vending Machine Backend - is made using the Nest Framework, TypeORM and MySql database. 
 It is a mono repo project for distributed monoliths, consisting of a backend for admind and customer with a shared library for both modules.
 
 
@@ -62,3 +62,5 @@ Admin swagger link: http://localhost:8300/api/
 
 
 
+## Note:
+Please make sure MySql is installed and create a database 'vending-machine' then run the Admin Backend to seed database.
