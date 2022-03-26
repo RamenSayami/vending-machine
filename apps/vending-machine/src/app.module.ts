@@ -7,13 +7,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { InventoryModule } from './inventory/inventory.module';
 import { SettingModule } from './setting/setting.module';
+import { LogModule } from './log/log.module';
 
 @Module({
   imports: [
     CommonModule,
     InventoryModule,
     TypeOrmModule.forFeature([Settings, Inventory]),
-    SettingModule],
+    SettingModule,
+    LogModule],
   controllers: [AppController],
   providers: [AppService],
 })

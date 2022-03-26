@@ -7,6 +7,7 @@ import { BuyDrinks } from './dto/buy-drinks.model';
 import { SettingConstants } from '@app/common/constants/settings.constant';
 import { Settings } from '@app/common/entities/settings';
 import { ReturnDrinks } from './dto/return-drinks.model';
+import { GenericResponseUtil } from '@app/common/utils/generic-response.util';
 
 @Injectable()
 export class CustomerService {
@@ -37,7 +38,7 @@ export class CustomerService {
     log.quantity = buyDrinks.quantity;
     log.amount = log.price * log.quantity;
 
-    log.totalCoins = buyDrinks.coins;
+    log.totalCoins = buyDrinks.coins; 
     log.totalCurrency = buyDrinks.coins * coinValueSetting.numberValue;
 
     log.consumedCoins = log.amount / coinValueSetting.numberValue;
@@ -65,7 +66,7 @@ export class CustomerService {
     vendingCoins.value = vendingCoins.numberValue.toString();
     await this.settingsRepo.save(vendingCoins);
 
-    return { log: log, setting: vendingCoins };
+    return GenericResponseUtil.getSuccessResponse(log,'Bought ' + log.quantity +" drinks");
   }
 
 

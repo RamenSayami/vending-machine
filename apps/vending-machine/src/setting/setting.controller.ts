@@ -1,14 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
+import { Controller, Get, Param, Put } from '@nestjs/common';
 import { SettingService } from './setting.service';
-import { CreateSettingDto } from './dto/create-setting.dto';
-import { UpdateSettingDto } from './dto/update-setting.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('setting')
 @ApiTags('settings')
 export class SettingController {
   constructor(private readonly settingService: SettingService) {}
-
 
   @Get()
   fetchAllSettings() {
@@ -28,5 +25,4 @@ export class SettingController {
   removeCoins(@Param('coins') coins: string) {
     return this.settingService.removeCoins(+coins);
   }
-
 }

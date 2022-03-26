@@ -7,13 +7,12 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class AppService implements OnApplicationBootstrap {
-
   constructor(
     @InjectRepository(Settings)
     private settingsRepo: Repository<Settings>,
     @InjectRepository(Inventory)
     private inventoryRepo: Repository<Inventory>,
-  ) { }
+  ) {}
 
   async onApplicationBootstrap() {
     //setting seeder
@@ -25,30 +24,29 @@ export class AppService implements OnApplicationBootstrap {
       var initalCoinSetting = new Settings();
       initalCoinSetting.name = SettingConstants.INITIAL_COINS;
       initalCoinSetting.isEditable = false;
-      initalCoinSetting.value = "100";
+      initalCoinSetting.value = '100';
       initalCoinSetting.numberValue = 100;
       this.settingsRepo.save(initalCoinSetting);
 
-      var initalCoinSetting = new Settings();
-      initalCoinSetting.name = SettingConstants.VENDING_COINS;
-      initalCoinSetting.isEditable = false;
-      initalCoinSetting.value = "100";
-      initalCoinSetting.numberValue = 100;
-      this.settingsRepo.save(initalCoinSetting);
+      var vendingCoinSetting = new Settings();
+      vendingCoinSetting.name = SettingConstants.VENDING_COINS;
+      vendingCoinSetting.isEditable = false;
+      vendingCoinSetting.value = '100';
+      vendingCoinSetting.numberValue = 100;
+      this.settingsRepo.save(vendingCoinSetting);
 
       var coinValueSetting = new Settings();
       coinValueSetting.name = SettingConstants.COIN_VALUE;
       coinValueSetting.isEditable = true;
-      coinValueSetting.value = "5";
+      coinValueSetting.value = '5';
       coinValueSetting.numberValue = 5;
       this.settingsRepo.save(coinValueSetting);
     }
 
     const inventories = await this.settingsRepo.find();
     if (inventories.length == 0) {
-
       var coke = new Inventory();
-      coke.name = "Coke";
+      coke.name = 'Coke';
       coke.price = 20;
       coke.initalStock = 10;
       coke.currentStock = 10;
@@ -56,7 +54,7 @@ export class AppService implements OnApplicationBootstrap {
       await this.inventoryRepo.save(coke);
 
       var pepsi = new Inventory();
-      pepsi.name = "Pepsi";
+      pepsi.name = 'Pepsi';
       pepsi.price = 25;
       pepsi.initalStock = 10;
       pepsi.currentStock = 10;
@@ -64,7 +62,7 @@ export class AppService implements OnApplicationBootstrap {
       await this.inventoryRepo.save(pepsi);
 
       var dew = new Inventory();
-      dew.name = "Dew";
+      dew.name = 'Dew';
       dew.price = 30;
       dew.initalStock = 10;
       dew.currentStock = 10;
@@ -72,7 +70,6 @@ export class AppService implements OnApplicationBootstrap {
       await this.inventoryRepo.save(dew);
     }
   }
-
 
   getHello(): string {
     return 'Hello World!';
