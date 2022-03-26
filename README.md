@@ -22,9 +22,11 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Vending Machine
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Vending Machine Backend - is made using the Nest Framework. 
+It is a mono repo project for distributed monoliths, consisting of a backend for admind and customer with a shared library for both modules.
+
 
 ## Installation
 
@@ -32,42 +34,31 @@
 $ npm install
 ```
 
-## Running the app
+## Running the Customer Backend
 
 ```bash
 # development
-$ npm run start
+$ nest start customer
 
 # watch mode
-$ npm run start:dev
+$ nest start customer --watch
 
-# production mode
-$ npm run start:prod
 ```
+Customer backend will start at http://localhost:8200/
+Customer swagger link: http://localhost:8200/api/
 
-## Test
+## Running the Admin Backend
 
 ```bash
-# unit tests
-$ npm run test
+# development
+$ nest start vending-machine
 
-# e2e tests
-$ npm run test:e2e
+# watch mode
+$ nest start vending-machine --watch
 
-# test coverage
-$ npm run test:cov
 ```
+Admin backend will start at http://localhost:8300/
+Admin swagger link: http://localhost:8300/api/
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
